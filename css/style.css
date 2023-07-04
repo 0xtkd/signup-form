@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid rgb(255, 255, 255); */
+}
+
+:root {
+    --main-width: 100vw;
+    --main-height: 100vh;
+    --l-section-width: calc(var(--main-width) - 60%);
+    --r-section-width: calc(var(--main-width) - var(--l-section-width));
+    --main-text-color: #f9f9f9;
+    --main-bg-color: rgba(0, 0, 0, .988888);
+    --header-section-hight: calc(var(--main-height) - 35vh);
+    --submit-section-hight: calc(var(--main-height) - 35vh);
+    --form-section-hight: calc(var(--main-height) - calc(var(--header-section-hight + var(--submit-section-hight))));
+
+    --form-section-hight: calc(var(--main-height) - calc(var(--header-section-hight) + var(--submit-section-hight)));
+}
+
+body {
+    width: var(--main-width);
+    height: var(--main-height);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+#left-section {
+    width: var(--l-section-width);
+    height: var(--main-height);
+    background-color: rgb(19, 42, 42);
+}
+
+
+#right-section {
+    width: var(--r-section-width);
+    height: var(--main-height);
+    background-color: rgb(18, 27, 27);
+}
+
+#right-section>* {
+    border: 1px solid rgb(255, 254, 254);
+}
+
+.header-section {
+    height: var(--header-section-hight);
+}
+
+.form-section {
+    height: var(--form-section-hight);
+}
+
+.submit-section {
+    height: var(--submit-section-hight);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+:root {
+    --main-width: ;
+    --main-height: ;
+    --main-text-color: ;
+    --main-bg-color: ;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#container {
+    width: calc(100% - 50%);
+    height: calc(100% - 40%);
+    border: 2px solid lightpink;
+}
+
+form fieldset {
+    height: calc(100vh / 3);
+    width: calc(100% - 4rem);
+    border: 2px solid rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+#container div {
+    width: 300px;
+    height: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+
+.sidebar {
+    width: 30%;
+    height: 100vh;
+    background: url("../bg.jpg") no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p {
+    width: calc(45ch, 50%, 75ch);
+} */
