@@ -1,73 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <section id="left-section">
+      <div class="dark-bg">
+        <div class="image-container">
+          <img src="images/odin-lined.png" alt="The Odin project logo" />
+        </div>
+      </div>
+    </section>
+    <section id="right-section">
+      <section class="header-section">
+        <p>
+          This is not a real online service! You know you need something like
+          this in your life to help ou realize your deepest dreams. Sign up now
+          to get started
+        </p>
+        <p>You know you want to.</p>
+      </section>
+      <section class="form-section">
+        <form action="/" method="post">
+          <fieldset>
+            <legend>Sign Up Form</legend>
+            <div class="first_name">
+              <label for="first_name">First Name</label>
+              <input
+                type="text"
+                name="first_name"
+                id="first_name"
+                maxlength="15"
+              />
+            </div>
+            <div class="last_name">
+              <label for="last_name">Last Name</label>
+              <input
+                type="text"
+                name="last_name"
+                id="last_name"
+                maxlength="15"
+              />
+            </div>
+            <div class="email">
+              <label for="email">*Email</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="phone_number">
+              <label for="phone_number">Phone Number</label>
+              <input type="text" name="phone_number" id="phone_number" />
+            </div>
 
-    <body>
-
-        <section id="left-section">
-        </section>
-        <section id="right-section">
-            <section class="header-section">i</section>
-            <section class="form-section">i</section>
-            <section class="submit-section">i</section>  
-        </section>
-
-
-        <!-- <div class="sidebar"></div>
-        <main id="container">
-            <section id="header">
-                <p>This is not a real online service! You know you need something like this in your life to help ou
-                    realize your deepest dreams. Sign up now to get started</p>
-                <p>You know you want to.</p>
-            </section id="form">
-            <section>
-                <h1>Sign Up Form</h1>
-                <form action="/" method="post">
-                    <fieldset>
-                        <legend>Sign Up Form</legend> 
-                        <div class="first_name">
-                            <label for="first_name">First Name</label>
-                            <input type="text" name="first_name" id="first_name">
-                        </div>
-                        <div class="last_name">
-                            <label for="last_name">Last Name</label>
-                            <input type="text" name="last_name" id="last_name">
-                        </div>
-                        <div class="email">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email">
-                        </div>
-                        <div class="phone_number">
-                            <label for="phone_number">Phone Number</label>
-                            <input type="text" name="phone_number" id="phone_number">
-                        </div>
-
-                        <div class="password">
-                            <label for="password" d>Password</label>
-                            <input type="password" name="password" id="password">
-                        </div>
-                        <div class="confirm_password">
-                            <label for="confirm_password" d>Confirm Password</label>
-                            <input type="confirm_password" name="confirm_password" id="confirm_password">
-                        </div>
-                    </fieldset>
-                </form>
-            </section>
-            <section id="footer">
-                
-            </section>
-
-        </main> -->
-        <script src="main.js"></script>
-    </body>
-</body>
-
+            <div class="password">
+              <label for="password">*Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                minlength="8"
+              />
+            </div>
+            <div class="confirm_password">
+              <label for="confirm_password" d>*Confirm Password</label>
+              <input
+                type="confirm_password"
+                name="confirm_password"
+                id="confirm_password"
+                minlength="8"
+              />
+            </div>
+          </fieldset>
+          <section class="submit-section">
+            <button type="submit">Create Account</button>
+            <p>Already have an account? <a href="#">Log in</a></p>
+          </section>
+        </form>
+      </section>
+      <!-- <section class="submit-section"> -->
+      <!--   <button type="submit">Create Account</button> -->
+      <!--   <p>Already have an account? <a href="#">Log in</a></p> -->
+      <!-- </section> -->
+    </section>
+    <script defer src="js/main.js"></script>
+  </body>
 </html>
