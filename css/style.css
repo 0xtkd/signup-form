@@ -3,19 +3,25 @@
   padding: 0;
   box-sizing: border-box;
   border: 1px solid rgb(255, 255, 255);
-  color: aliceblue;
 }
 
 :root {
   --main-width: 100vw;
   --main-height: 100vh;
+  --main-text-color: #242424;
+  /* --main-bg-color: #28282a; */
+
   --l-section-width: calc(var(--main-width) - 68%);
   --r-section-width: calc(var(--main-width) - var(--l-section-width));
-  --main-text-color: #242424;
-  --main-bg-color: #28282a;
+
+  --header-bg-color: #F9FAFB;
   --header-section-hight: 34%;
+
   --form-section-height: calc(var(--main-height) - var(--header-section-hight));
   /* --submit-height-section: calc(var(--form-section-height) - var(--header-section-hight)) */
+
+  --submit-section-bg: #F9FAFB;
+  --btn-bg-color: #596D48;
 }
 
 body {
@@ -64,13 +70,17 @@ body {
 }
 
 #left-section>div>div {
-  width: 40%;
-  height: 80%;
+  width: 20%;
+  height: 90%;
 }
 
-div>img {
+#left-section>div>div>img {
   width: 100%;
   height: 100%;
+}
+
+#left-section>h1 {
+  color: #f5f5f5;
 }
 
 /* right side */
@@ -87,6 +97,7 @@ div>img {
 .header-section {
   height: var(--header-section-hight);
   padding-top: 6rem;
+  background-color: var(--header-bg-color);
 }
 
 .header-section>p {
@@ -104,24 +115,36 @@ div>img {
 
 /* submit section */
 
+input[type^=text],
+input[type^=email],
+input[type^=password] {
+  width: 200px;
+  border: 1px solid silver;
+}
+
 .submit-section {
   height: 40vh;
-  /* background-color: red; */
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 3rem 0 0;
+  background-color: var(--submit-section-bg);
 }
 
 .submit-section button {
   width: 10rem;
   height: 30px;
+  color: #f5f5f5;
+  background-color: var(--btn-bg-color);
+}
+
+.submit-section>p>a:link {
+  color: var(--btn-bg-color);
 }
 
 /*  */
 .fieldset-section {
   height: 25vh;
-  /* background-color: blue; */
   display: grid;
   grid-template-columns: repeat(2, minmax(150px, 1fr));
   gap: 1rem;
@@ -132,4 +155,12 @@ div>img {
   display: flex;
   flex-direction: column;
   gap: 7px;
+}
+
+/* padding left */
+
+.header-section,
+.fieldset-section,
+.submit-section {
+  padding-left: 2rem;
 }
