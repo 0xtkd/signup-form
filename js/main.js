@@ -1,29 +1,58 @@
-// console.log('empty')
+// input elements selection
 const firstName = document.querySelector('#first_name');
 const lastName = document.querySelector('#last_name');
 const email = document.querySelector('#email');
 const phoneNumber = document.querySelector('#phone_number');
-const password = document.querySelector('#password');
-const confirmPassword = document.querySelector('#confirm_password');
-const submitButton = document.querySelector('button[type^=submit');
+// const password = document.querySelector('#password');
+// const confirmPassword = document.querySelector('#confirm_password');
+// const submitButton = document.querySelector('button[type^=submit');
 
-// warning message;
-const firstNameWarningMsg = document.querySelector('.first_name > .warning');
-const lastNameWarningMsg = document.querySelector('.last_name > .warning');
-const emailWarningMsg = document.querySelector('.email > .warning');
-const passwordWarningMsg = document.querySelector('.password > .warning');
-const confirmPasswordWarningMsg = document.querySelector(
-    '.confirm_password > p',
-);
+// message container
+const firstNameContainer = document.querySelector('.first_name');
+const lastNameContainer = document.querySelector('.last_name');
+const emailContainer = document.querySelector('.email');
+const phoneNumberContainer = document.querySelector('.phone_number');
+const passwordContainer = document.querySelector('.password');
+const confirmPasswordContainer = document.querySelector('.confirm_password');
 
-submitButton.addEventListener('click', function(e) {
+// form info message display
+const firstNameUserInfo = document.createElement('span');
+firstNameUserInfo.classList.add('info');
+firstNameContainer.append(firstNameUserInfo);
+
+const lastNameUserInfo = document.createElement('span');
+lastNameUserInfo.classList.add('info');
+lastNameContainer.append(lastNameUserInfo);
+
+const emailUserInfo = document.createElement('span');
+emailUserInfo.classList.add('info');
+emailContainer.append(emailUserInfo);
+
+const phoneNumberUserInfo = document.createElement('span');
+phoneNumberUserInfo.classList.add('info');
+phoneNumberContainer.append(phoneNumberUserInfo);
+
+const passwordUserInfo = document.createElement('span');
+passwordUserInfo.classList.add('info');
+passwordContainer.append(passwordUserInfo);
+
+const confirmPasswordUserInfo = document.createElement('span');
+confirmPasswordUserInfo.classList.add('info');
+confirmPasswordContainer.append(confirmPasswordUserInfo);
+
+// form events listeners
+// const filledInMsg = 'Please fill in the field correctly';
+// firstName
+
+document.querySelector('body').addEventListener('submit', (e) => {
   if (
-    firstNameWarningMsg.textContent.length > 0 ||
-    lastNameWarningMsg.textContent.length > 0 ||
-    emailWarningMsg.textContent.length > 0 ||
-    passwordWarningMsg.textContent.length > 0 ||
-    confirmPasswordWarningMsg.textContent.length > 0
+    firstNameUserInfo.textContent.length > 0 ||
+    lastNameUserInfo.textContent.length > 0 ||
+    emailUserInfo.textContent.length > 0 ||
+    passwordUserInfo.textContent.length > 0 ||
+    confirmPasswordUserInfo.textContent.length > 0
   ) {
     e.preventDefault();
   }
 });
+

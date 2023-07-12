@@ -14,7 +14,7 @@
       <div class="image-container">
         <img src="images/odin-lined.png" alt="The Odin project logo" />
       </div>
-      <h1>ODIN</h1>
+      <span>ODIN</span>
     </div>
   </section>
   <section id="right-section">
@@ -29,47 +29,46 @@
     <section class="form-section">
       <form action="/" method="post">
         <fieldset class="fieldset-section">
-          <!-- <legend>Sign Up Form</legend> -->
           <div class="first_name">
             <label for="first_name">*First Name</label>
-            <input type="text" name="first_name" id="first_name" maxlength="15" placeholder="John" required/>
-            <span class="warning"><!-- Message --></span>
+            <input type="text" name="first_name" id="first_name" maxlength="15" placeholder="Example : John" required />
           </div>
           <div class="last_name">
             <label for="last_name">*Last Name</label>
-            <input type="text" name="last_name" id="last_name" maxlength="15" placeholder="Does" required/>
-            <span class="warning"><!-- Message --></span>
+            <input type="text" name="last_name" id="last_name" maxlength="15" placeholder="Example : Does" required />
           </div>
           <div class="email">
             <label for="email">*Email</label>
-            <input type="email" name="email" id="email" placeholder="exemple@please.org"/>
-            <span class="warning"><!-- Message --></p>
+            <input type="email" name="email" id="email" placeholder="Exeample : exemple@please.org" />
           </div>
           <div class="phone_number">
             <label for="phone_number">Phone Number</label>
-            <input type="text" name="phone_number" id="phone_number" pattern="[^0-9]+$" placeholder="+44 4748 383 39" required/>
-            <span class="warning"><!-- Message --></p>
+            <input type="text" name="phone_number" id="phone_number" pattern="[^0-9]+$" placeholder="Example : +44 4748 383 39"
+              required />
           </div>
-
           <div class="password">
             <label for="password">*Password</label>
-            <input type="password" name="password" id="password" minlength="8" placeholder="Enter your password" required/>
-            <span class="warning"><!-- Message --></p>
+            <input type="password" name="password" id="password" minlength="8" placeholder="Enter your password"
+              required />
           </div>
           <div class="confirm_password">
             <label for="confirm_password" d>*Confirm Password</label>
-            <input type="password" name="confirm_password" id="confirm_password" minlength="8" placeholder="Confirm Password" required/>
-            <span class="warning"><!-- Message --></span>
+            <input type="password" name="confirm_password" id="confirm_password" minlength="8"
+              placeholder="Confirm Password" required />
           </div>
         </fieldset>
-        <section class="submit-section">
+        <fieldset class="submit-section">
           <button type="submit">Create Account</button>
-          <p>Already have an account? <a href="#">Log in</a></p>
-        </section>
+          <div class="divider">
+            <hr class="left-hr" />
+            <p>Already have an account? <a href="#">Log in</a></p>
+            <hr class="right-hr" />
+          </div>
+        </fieldset>
       </form>
-    </sGection>
-  </section>
-  <script defer src="js/main.js">error.js</script>
+      </section>
+    </section>
+    <script defer src="js/main.js">error.js</script>
 </body>
 
 </html>
