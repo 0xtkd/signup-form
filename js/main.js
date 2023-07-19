@@ -1,68 +1,86 @@
-// input elements selection
+// input fields selection
 const firstName = document.querySelector("#first_name");
 const lastName = document.querySelector("#last_name");
 const email = document.querySelector("#email");
 const phoneNumber = document.querySelector("#phone_number");
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirm_password");
-// const submitButton = document.querySelector('button[type^=submit');
-
-// message container
-const firstNameContainer = document.querySelector(".first_name");
-const lastNameContainer = document.querySelector(".last_name");
-const emailContainer = document.querySelector(".email");
-const phoneNumberContainer = document.querySelector(".phone_number");
-const passwordContainer = document.querySelector(".password");
-const confirmPasswordContainer = document.querySelector(".confirm_password");
 
 // form info message display
-const firstNameUserInfo = document.createElement("span");
-firstNameUserInfo.classList.add("info");
-firstNameContainer.append(firstNameUserInfo);
+const firstNameInfo = document.querySelector(".first_name > span");
+firstNameInfo.classList.add("info");
+const lastNameInfo = document.querySelector(".last_name > span");
+lastNameInfo.classList.add("info");
+const emailInfo = document.querySelector(".email > span");
+emailInfo.classList.add("info");
+const phoneNumberInfo = document.querySelector(".phone_number > span");
+phoneNumberInfo.classList.add("info");
+const passwordInfo = document.querySelector(".password > span");
+passwordInfo.classList.add("info");
+const confirmPasswordInfo = document.querySelector(".confirm_password > span");
+confirmPasswordInfo.classList.add("info");
 
-const lastNameUserInfo = document.createElement("span");
-lastNameUserInfo.classList.add("info");
-lastNameContainer.append(lastNameUserInfo);
+// regex variables
+// const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+// const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
 
-const emailUserInfo = document.createElement("span");
-emailUserInfo.classList.add("info");
-emailContainer.append(emailUserInfo);
+// first name validation
+firstName.addEventListener("focusout", () => {
+  if (firstName.value.length <= 0) {
+    firstNameInfo.textContent = "This input field is required";
+  } else if (firstName.value.length <= 1) {
+    firstNameInfo.textContent =
+      "Input field must be at least 2 characters long";
+  } else {
+    firstNameInfo.textContent = "This field has been validated validated";
+  }
+});
 
-const phoneNumberUserInfo = document.createElement("span");
-phoneNumberUserInfo.classList.add("info");
-phoneNumberContainer.append(phoneNumberUserInfo);
+// last name validation
+lastName.addEventListener("focusout", () => {
+  if (lastName.value.length <= 0) {
+    lastNameInfo.textContent = "This input field is required";
+  } else if (lastName.value.length <= 1) {
+    lastNameInfo.textContent = "Input field must be at least 2 characters long";
+  } else {
+    lastNameInfo.textContent = "This field has been successfully validated";
+  }
+});
 
-const passwordUserInfo = document.createElement("span");
-passwordUserInfo.classList.add("info");
-passwordContainer.append(passwordUserInfo);
+// email address validation
+email.addEventListener("focusout", () => {
+  // const isValidEmail = emailRegex.test(email.value);
+  if (email.value.length === "") {
+    emailInfo.textContent = "This input field is required";
+  } else if (isValidEmail) {
+    emailInfo.textContent = "This field has been successfully validated";
+  } else if (email.value.length <= 1) {
+    emailInfo.textContent = "Input field must be at least 2 characters long";
+  } else {
+    emailInfo.textContent = "This field has been successfully validated";
+  }
+});
 
-const confirmPasswordUserInfo = document.createElement("span");
-
-confirmPasswordUserInfo.classList.add("info");
-confirmPasswordContainer.append(confirmPasswordUserInfo);
-
-// form events listeners
-// const filledInMsg = 'Please fill in the field correctly';
-// firstName
+// phone number validation
+phoneNumber.addEventListener("focusout", () => {
+  //  const isValidPhone = emailRegex.test(phoneNumber.value);
+  if (phoneNumber.value === "") {
+    phoneNumberInfo.textContent = "Please provide a valide phone number";
+  } else {
+    phoneNumberInfo.textContent = "This field has been successfully validated";
+  }
+});
 
 const validateForm = () => {
+  // password validation
   if (password.value !== confirmPassword.value) {
-    console.log("Password do not matche !");
+    passwordInfo.textContent = "Password do not matche !";
+    return false;
+  } else if (password.value === "" || confirmPassword.value === "") {
+    passwordInfo.textContent = "Password field can not be empty";
     return false;
   } else {
-    console.log("Password has been created successfully!");
+    passwordInfo.textContent = "Password has been created successfully!";
     return true;
   }
 };
-
-document.querySelector("body").addEventListener("submit", (e) => {
-  if (
-    firstNameUserInfo.textContent.length > 0 ||
-    lastNameUserInfo.textContent.length > 0 ||
-    emailUserInfo.textContent.length > 0 ||
-    passwordUserInfo.textContent.length > 0 ||
-    confirmPasswordUserInfo.textContent.length > 0
-  ) {
-    e.preventDefault();
-  }
-});

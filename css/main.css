@@ -13,15 +13,88 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 1px solid black;
 }
 
 body {
   min-width: 100dvh;
-  background-color: #2f2e41;
-  overflow-x: hidden;
+  /* background-color: #2f2e41; */
+  background-color: #fff;
+  color: black;
+  display: grid;
+  grid-template-columns: 1.2fr 3fr;
 }
 
+/* left main section */
+#left-section {
+  background: url("../images/tree_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100dvh;
+}
+
+.dark-bg {
+  height: 15vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15vh;
+}
+
+.image-container {
+  width: 20%;
+  padding: 1.3% 1%;
+}
+
+img {
+  width: 100%;
+}
+
+.brand {
+  font-family: "Norse-Bold", sans-serif;
+  font-size: 6rem;
+  color: #ffffff;
+}
+
+/* right main section */
+#right-section {
+  background-color: #fff;
+  color: black;
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.2fr 1.1fr 1.4fr;
+}
+
+.header-section, .form-section, .submit-section {
+  padding: 0 0 0 2rem;
+}
+
+.header-section {
+  /* display: grid;
+  align-items: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.header-section > p {
+  width: clamp(45ch, 50%, 75ch);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 @media only screen and (max-width: 817px) {
+  body {
+    min-width: 100dvh;
+    background-color: #2f2e41;
+    overflow-x: hidden;
+  }
+
   .fieldset-section,
   .submit-section {
     border: none;
@@ -34,6 +107,7 @@ body {
   input:focus {
     border-color: #000;
   }
+
   input:invalid:required:focus {
     background-color: red;
     border-color: red;
@@ -48,7 +122,7 @@ body {
     color: #418a53;
     text-decoration: none;
     font-size: 1rem;
-  font-weight: bold;
+    font-weight: bold;
   }
 
   /*
@@ -79,7 +153,7 @@ body {
   }
 
   .header-section {
-    max-width: clamp(40ch, 45%, 75ch);
+    max-width: clamp(30ch, 45%, 75ch);
     font-size: 1.2em;
     line-height: 2;
     font-weight: bold;
@@ -151,7 +225,7 @@ body {
     gap: 2rem;
   }
 
-  .submit-section > button[type="submit"] {
+  .submit-section>button[type="submit"] {
     font-weight: bold;
     font-size: 1.1rem;
     border-radius: 6px;
