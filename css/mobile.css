@@ -1,0 +1,148 @@
+@media only screen and (max-width: 817px) {
+  body {
+    background-color: #2f2e41;
+    overflow-x: hidden;
+  }
+
+  .fieldset-section,
+  .submit-section {
+    border: none;
+  }
+
+  label {
+    color: #418a53;
+  }
+
+  input:focus {
+    border-color: #000;
+  }
+
+  input:invalid:required:focus {
+    background-color: red;
+    border-color: red;
+  }
+
+  input:valid:required:focus {
+    background-color: #596d48;
+    border-color: #596d48;
+  }
+
+  .submit-section a {
+    color: #418a53;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  /*
+* left section
+*/
+
+  #left-section {
+    width: 100vw;
+    height: 70vh;
+    background: url("../images/mobile.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #596d48;
+  }
+
+  .dark-bg {
+    display: none;
+  }
+
+  /*
+* right section
+*/
+
+  #right-section {
+    width: 150vw;
+    height: 100dvh;
+    color: #fff;
+  }
+
+  .header-section {
+    max-width: clamp(30ch, 45%, 75ch);
+    font-size: 1.2em;
+    line-height: 2;
+    font-weight: bold;
+    padding: 7vw 3vw;
+    margin: 0 0 5rem 2rem;
+    color: #fff;
+  }
+
+  .header-section :first-child {
+    margin-bottom: 4vh;
+  }
+
+  /*
+* form section
+*/
+
+  .form-section {
+    width: 100vw;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fieldset-section {
+    width: 85vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form {
+    max-width: 85vw;
+    min-height: 12vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 1.3rem;
+  }
+
+  .form span {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 15px 0;
+    font-size: 0.8rem;
+  }
+
+  /*
+* input
+*/
+
+  input {
+    margin-top: 1rem;
+    height: 2rem;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgba(47, 46, 65, 0.2);
+  }
+
+  /*
+* submit section
+*/
+
+  .submit-section {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .submit-section>button[type="submit"] {
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    background-color: #596d48;
+    color: #fff;
+    border: none;
+    width: 40vw;
+    height: 5vh;
+  }
+}
