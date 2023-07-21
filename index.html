@@ -10,8 +10,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
     <title>Sign Up - Form</title>
   </head>
 
@@ -36,7 +36,7 @@
       <section class="form-section">
         <form action="/" method="get" onsubmit="return validateForm();">
           <fieldset class="fieldset-section">
-            <h3>Les't do this!</h3>
+            <h3 class="title">Les't do this!</h3>
             <div class="first_name form">
               <label for="first_name"
                 ><i class="fa-regular fa-user fa-xl"></i> First Name*
@@ -122,7 +122,7 @@
                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                 minlength="8"
                 maxlength="20"
-                placeholder="Confirm Password"
+                placeholder="Confirm your Password"
                 title="Password must have : capital letter, special symbol, number, and letters"
                 required
               />
@@ -131,9 +131,9 @@
           </fieldset>
           <fieldset class="submit-section">
             <button type="submit">Create Account</button>
-            <div class="divider">
+            <!-- <div class="divider"> -->
               <p>Already have an account? <a href="#">Log in</a></p>
-            </div>
+            <!-- </div> -->
           </fieldset>
         </form>
       </section>
