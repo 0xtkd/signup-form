@@ -13,16 +13,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 
 body {
-  min-width: 100dvh;
-  /* background-color: #2f2e41; */
-  background-color: #fff;
+  min-width: 100vh;
+  overflow-x: hidden;
+  background-color: #2f2e41;
   color: black;
   display: grid;
   grid-template-columns: 1.2fr 3fr;
+}
+
+input:focus {
+  border-color: #000;
+}
+
+input:invalid:required:focus {
+  background-color: red;
+  border-color: red;
+}
+
+input:valid:required:focus {
+  background-color: #596d48;
+  border-color: #596d48;
 }
 
 /* left main section */
@@ -30,7 +44,7 @@ body {
   background: url("../images/tree_background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100dvh;
+  height: 100vh;
 }
 
 .dark-bg {
@@ -68,82 +82,94 @@ img {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1.2fr 1.1fr 1.4fr;
-  padding: 0 0 0 2rem;
 }
 
 /*  header section < right section */
 .header-section {
+  background-color: #F9FAFB;
   height: 30ch;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
+  padding: 0 0 0 2rem;
 }
 
-.header-section > p {
+.header-section>p {
   width: clamp(45ch, 50%, 75ch);
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .fieldset-section {
+  height: 35ch;
+  padding: 2ch 0;
   border: none;
   display: grid;
   grid-template-columns: repeat(2, minmax(38ch, 45ch));
   gap: 2ch;
+  padding: 0 0 0 2rem;
 }
 
 .title {
   grid-column: span 2;
+  margin-top: 1ch;
 }
 
-.fieldset-section > div {
+.fieldset-section>div {
   height: 8ch;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: .9fr 1fr .5fr;
-  padding: 0 4px;
-  border: 1px solid black;
-}  
+  padding: 1ch 0;
+  margin: -3px 5ch 0 0;
+}
 
-div > span {
+.fieldset-section input {
+  height: 4ch;
+  border-radius: 4px;
+  padding-left: 2px;
+}
+
+div>span {
   font-size: .5rem;
 }
 
 /*  submit section */
 .submit-section {
+  background-color: #F9FAFB;
   height: 33ch;
   display: flex;
   flex-direction: column;
   gap: 2.5em;
+  padding: 0 0 0 2rem;
 }
 
-.submit-section > :first-child {
+.submit-section> :first-child {
   margin-top: 3rem;
-  width: 25ch;
+  width: 24ch;
   height: 5ch;
   color: #fff;
-  background-color: #418a53;
+  background-color: #596D48;
   text-decoration: none;
   border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
+  border-radius: 8px;
+  font-size: .9rem;
   font-weight: bold;
 }
 
-.submit-section > :last-child {
+.submit-section> :last-child {
   font-size: 1.1rem;
 }
 
-.submit-section > :last-child > a {
+.submit-section> :last-child>a {
   text-decoration: none;
-  color: #418a53;
+  color: #596D48;
   font-weight: bold;
 }
 
 @media only screen and (max-width: 817px) {
   body {
-    min-width: 100vh;
     background-color: #2f2e41;
     overflow-x: hidden;
   }
@@ -185,7 +211,7 @@ div > span {
   #left-section {
     width: 100vw;
     height: 70vh;
-    background: url("../images/dev_app.svg");
+    background: url("../images/mobile.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-color: #596d48;
@@ -212,6 +238,7 @@ div > span {
     font-weight: bold;
     padding: 7vw 3vw;
     margin: 0 0 5rem 2rem;
+    color: #fff;
   }
 
   .header-section :first-child {
@@ -223,7 +250,7 @@ div > span {
 */
 
   .form-section {
-    width: 100dvw;
+    width: 100vw;
     height: 110vh;
     display: flex;
     flex-direction: column;
@@ -240,7 +267,7 @@ div > span {
 
   .form {
     max-width: 85vw;
-    min-height: 12dvh;
+    min-height: 12vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
