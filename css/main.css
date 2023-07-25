@@ -14,7 +14,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid black;
   }
 
   body {
@@ -24,20 +23,20 @@
     color: black;
     display: grid;
     grid-template-columns: 1.2fr 3fr;
+    font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
   }
 
   input:focus {
-    border-color: #000;
+    border-color:#2e8bc0;
   }
 
   input:invalid:required:focus {
-    background-color: rgb(174, 64, 64);
-    border-color: rgb(174, 64, 64);
+    border-color: #E3242B;
   }
 
   input:valid:required:focus {
-    background-color: #596d48;
-    border-color: #596d48;
+    border-color: #0B6623;
   }
 
   /* left main section */
@@ -45,7 +44,8 @@
     background: url("../images/tree_background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 112vh;
+    position: relative;
   }
 
   .dark-bg {
@@ -57,7 +57,7 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    margin-top: 15vh;
+    margin-top: 19vh;
   }
 
   .image-container {
@@ -72,6 +72,19 @@
   .brand {
     font-family: "Norse-Bold", sans-serif;
     font-size: 6rem;
+    color: #ffffff;
+  }
+
+  .copyright {
+    position: absolute;
+    color: #fff;
+    bottom: 1rem;
+    width: 100%;
+    font-size: .8rem;
+    text-align: center;
+  }
+
+  .copyright > a {
     color: #ffffff;
   }
 
