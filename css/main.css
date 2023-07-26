@@ -50,8 +50,9 @@ input:valid:required:focus {
     background: url("../images/tree_background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 112vh;
+    height: 132dvh;
     position: relative;
+    border: 2px solid #596d48;
   }
 
   .dark-bg {
@@ -63,7 +64,7 @@ input:valid:required:focus {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    margin-top: 19vh;
+    margin-top: 25dvh;
   }
 
   .image-container {
@@ -98,7 +99,7 @@ input:valid:required:focus {
   #right-section {
     background-color: #fff;
     color: black;
-    height: 100vh;
+    height: 132dvh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1.2fr 1.1fr 1.4fr;
@@ -322,17 +323,41 @@ input:valid:required:focus {
 
   .submit-section>button[type="submit"] {
     cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1rem;
+    font-weight: 300;
+    font-size: 1rem;
     border-radius: 6px;
     background-color: #596d48;
     color: #fff;
     border: none;
     width: 40vw;
-    height: 5vh;
+    height: 6vh;
   }
 
   #right-section {
     margin-left: -1rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  body {
+    margin-left: -1px;
+    font-size: .7rem;
+  }
+ 
+  .header-section {
+    padding-left: 0;
+  }
+
+  .header-section > p {
+    margin: 0 2vw 0 0;
+  }
+
+  .form span {
+    font-size: .5rem;
+    margin-top: -.3rem;
+  }
+
+  .submit-section {
+    margin-top: 15vh;
   }
 }
