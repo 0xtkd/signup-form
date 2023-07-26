@@ -36,7 +36,7 @@ firstName.addEventListener("focusout", () => {
     firstNameInfo.style.color = "red"
     firstName.style.borderColor = "red"
   } else {
-    firstNameInfo.textContent = "This field has been validated validated";
+    firstNameInfo.textContent = "This field has been validated";
     firstNameInfo.style.color = "green"
     firstName.style.borderColor = "green"
   }
