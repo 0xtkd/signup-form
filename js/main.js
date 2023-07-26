@@ -6,7 +6,7 @@ const phoneNumber = document.querySelector("#phone_number");
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirm_password");
 
-// form info message display
+// display form info
 const firstNameInfo = document.querySelector(".first_name > span");
 firstNameInfo.classList.add("info");
 const lastNameInfo = document.querySelector(".last_name > span");
@@ -19,6 +19,10 @@ const passwordInfo = document.querySelector(".password > span");
 passwordInfo.classList.add("info");
 const confirmPasswordInfo = document.querySelector(".confirm_password > span");
 confirmPasswordInfo.classList.add("info");
+
+// prevent form submission
+let preventPass = false;
+let preventConfPass = false;
 
 // first name validation
 firstName.addEventListener("focusout", () => {
@@ -124,6 +128,7 @@ password.addEventListener("focusout", () => {
     passwordInfo.textContent = "This input field is required";
     passwordInfo.style.color = "red"
     password.style.borderColor = "red"
+    preventPass = true
   } else if (tetingPassword.test(password.value) === true) {
     passwordInfo.textContent = "Password matched required form"
     if (passIsFocusOut === true && confPassIsFocusOut === true) {
@@ -133,7 +138,8 @@ password.addEventListener("focusout", () => {
         passwordInfo.style.color = "red"
         password.style.borderColor = "red"
         confirmPasswordInfo.style.color = "red"
-        confirmPassword.style.color = "red"
+        confirmPassword.style.borderColor = "red"
+        preventPass = true
       } else if (password.value === confirmPassword.value) {
         passwordInfo.textContent = "Password matched successfully"
         passwordInfo.style.color = "green"
@@ -144,6 +150,7 @@ password.addEventListener("focusout", () => {
     }
   } else if (tetingPassword.test(password.value) === false) {
     passwordInfo.textContent = "Sorry password does not matched our requirement"
+    preventPass = true
   }
 });
 
@@ -162,6 +169,7 @@ confirmPassword.addEventListener("focusout", () => {
     confirmPasswordInfo.textContent = "This input field is required"
     confirmPasswordInfo.style.color = "red"
     confirmPassword.style.borderColor = "red"
+    preventConfPass = true
   } else if (tetingPassword.test(confirmPassword.value) === true) {
     confirmPasswordInfo.textContent = "Password matched required form"
     if (passIsFocusOut === true && confPassIsFocusOut === true) {
@@ -171,7 +179,8 @@ confirmPassword.addEventListener("focusout", () => {
         passwordInfo.style.color = "red"
         password.style.borderColor = "red"
         confirmPasswordInfo.style.color = "red"
-        confirmPassword.style.color = "red"
+        confirmPassword.style.borderColor = "red"
+        preventConfPass = true
       } else if (password.value === confirmPassword.value) {
         confirmPasswordInfo.textContent = "Password matched successfully"
         passwordInfo.style.color = "green"
@@ -182,6 +191,7 @@ confirmPassword.addEventListener("focusout", () => {
     }
   } else if (tetingPassword.test(confirmPassword.value) === false) {
     confirmPasswordInfo.textContent = "Sorry password does not matched our requirement"
+    preventConfPass = true
   }
 });
 
@@ -191,9 +201,9 @@ confirmPassword.addEventListener("focusin", () => {
   }
 });
 
-const form = document.querySelector("form");
-form.addEventListener("onsubmit", (e) => {
-  if (true) {
+const sendForm = document.querySelector("form");
+sendForm.addEventListener("click", (e) => {
+  if (preventPass === true || preventConfPass === true) {
     e.preventDefault();
   }
 })
