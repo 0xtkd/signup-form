@@ -20,19 +20,27 @@ passwordInfo.classList.add("info");
 const confirmPasswordInfo = document.querySelector(".confirm_password > span");
 confirmPasswordInfo.classList.add("info");
 
-// regex variables
-// const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-// const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
-
 // first name validation
 firstName.addEventListener("focusout", () => {
-  if (firstName.value.length <= 0) {
+  if (firstName.value === "") {
     firstNameInfo.textContent = "This input field is required";
+    firstNameInfo.style.color = "red"
+    firstName.style.borderColor = "red"
   } else if (firstName.value.length <= 1) {
     firstNameInfo.textContent =
       "Input field must be at least 2 characters long";
+    firstNameInfo.style.color = "red"
+    firstName.style.borderColor = "red"
   } else {
     firstNameInfo.textContent = "This field has been validated validated";
+    firstNameInfo.style.color = "green"
+    firstName.style.borderColor = "green"
+  }
+});
+
+firstName.addEventListener("focusin", () => {
+  if (firstNameInfo.textContent.length >= 1) {
+    firstNameInfo.textContent = "";
   }
 });
 
@@ -40,47 +48,152 @@ firstName.addEventListener("focusout", () => {
 lastName.addEventListener("focusout", () => {
   if (lastName.value.length <= 0) {
     lastNameInfo.textContent = "This input field is required";
+    lastNameInfo.style.color = "red"
+    lastName.style.borderColor = "red"
   } else if (lastName.value.length <= 1) {
     lastNameInfo.textContent = "Input field must be at least 2 characters long";
+    lastNameInfo.style.color = "red"
+    lastName.style.borderColor = "red"
+  } else if (lastName.value.length <= 1) {
   } else {
     lastNameInfo.textContent = "This field has been successfully validated";
+    lastNameInfo.style.color = "green"
+    lastName.style.borderColor = "green"
+  }
+});
+
+lastName.addEventListener("focusin", () => {
+  if (lastNameInfo.textContent.length >= 1) {
+    lastNameInfo.textContent = "";
   }
 });
 
 // email address validation
+const validateEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
 email.addEventListener("focusout", () => {
-  // const isValidEmail = emailRegex.test(email.value);
-  if (email.value.length === "") {
+  if (email.value === "") {
     emailInfo.textContent = "This input field is required";
-  } else if (isValidEmail) {
-    emailInfo.textContent = "This field has been successfully validated";
-  } else if (email.value.length <= 1) {
-    emailInfo.textContent = "Input field must be at least 2 characters long";
-  } else {
-    emailInfo.textContent = "This field has been successfully validated";
+    emailInfo.style.color = "red"
+    email.style.borderColor = "red"
+  } else if (validateEmail.test(email.value) === true) {
+    emailInfo.textContent = "Email adress validated";
+    emailInfo.style.color = "green"
+    email.style.borderColor = "green"
+  } else if (validateEmail.test(email.value) === false) {
+    emailInfo.textContent = "Please provide a valide email adress";
+    emailInfo.style.color = "red"
+    email.style.borderColor = "red"
+  }
+});
+
+email.addEventListener("focusin", () => {
+  if (emailInfo.textContent.length >= 1) {
+    emailInfo.textContent = "";
   }
 });
 
 // phone number validation
+const validatePhone = /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/g
 phoneNumber.addEventListener("focusout", () => {
-  //  const isValidPhone = emailRegex.test(phoneNumber.value);
   if (phoneNumber.value === "") {
-    phoneNumberInfo.textContent = "Please provide a valide phone number";
-  } else {
-    phoneNumberInfo.textContent = "This field has been successfully validated";
+    phoneNumberInfo.textContent = "This input field is required";
+    phoneNumberInfo.style.color = "red"
+    phoneNumber.style.borderColor = "red"
+  } else if (validatePhone.test(phoneNumber.value) === true) {
+    phoneNumberInfo.textContent = "Your phone number has been validated successfully";
+    phoneNumberInfo.style.color = "green"
+    phoneNumber.style.borderColor = "green"
+  } else if (validatePhone.test(phoneNumber) === false) {
+    phoneNumberInfo.textContent = "Please provided a valide phone number"
+    phoneNumberInfo.style.color = "red"
+    phoneNumber.style.borderColor = "red"
   }
 });
 
-const validateForm = () => {
-  // password validation
-  if (password.value !== confirmPassword.value) {
-    passwordInfo.textContent = "Password do not matche !";
-    return false;
-  } else if (password.value === "" || confirmPassword.value === "") {
-    passwordInfo.textContent = "Password field can not be empty";
-    return false;
-  } else {
-    passwordInfo.textContent = "Password has been created successfully!";
-    return true;
+phoneNumber.addEventListener("focusin", () => {
+  if (phoneNumberInfo.textContent.length >= 1) {
+    phoneNumberInfo.textContent = "";
   }
-};
+});
+
+// password validation
+let passIsFocusOut = false
+password.addEventListener("focusout", () => {
+  passIsFocusOut = true;
+  if (password.value === "") {
+    passwordInfo.textContent = "This input field is required";
+    passwordInfo.style.color = "red"
+    password.style.borderColor = "red"
+  } else if (tetingPassword.test(password.value) === true) {
+    passwordInfo.textContent = "Password matched required form"
+    if (passIsFocusOut === true && confPassIsFocusOut === true) {
+      if (password.value !== confirmPassword.value) {
+        passwordInfo.textContent = "Password do not matched"
+        confirmPasswordInfo.textContent = "Password do not matched"
+        passwordInfo.style.color = "red"
+        password.style.borderColor = "red"
+        confirmPasswordInfo.style.color = "red"
+        confirmPassword.style.color = "red"
+      } else if (password.value === confirmPassword.value) {
+        passwordInfo.textContent = "Password matched successfully"
+        passwordInfo.style.color = "green"
+        password.style.borderColor = "green"
+        confirmPasswordInfo.style.color = "green"
+        confirmPassword.style.color = "green"
+      }
+    }
+  } else if (tetingPassword.test(password.value) === false) {
+    passwordInfo.textContent = "Sorry password does not matched our requirement"
+  }
+});
+
+password.addEventListener("focusin", () => {
+  if (passwordInfo.textContent.length >= 1) {
+    passwordInfo.textContent = "";
+  }
+});
+
+// confirm password validation
+let tetingPassword = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")
+let confPassIsFocusOut = false
+confirmPassword.addEventListener("focusout", () => {
+  confPassIsFocusOut = true;
+  if (confirmPassword.value.length === 0) {
+    confirmPasswordInfo.textContent = "This input field is required"
+    confirmPasswordInfo.style.color = "red"
+    confirmPassword.style.borderColor = "red"
+  } else if (tetingPassword.test(confirmPassword.value) === true) {
+    confirmPasswordInfo.textContent = "Password matched required form"
+    if (passIsFocusOut === true && confPassIsFocusOut === true) {
+      if (password.value !== confirmPassword.value) {
+        passwordInfo.textContent = "Password do not matched"
+        confirmPasswordInfo.textContent = "Password do not matched"
+        passwordInfo.style.color = "red"
+        password.style.borderColor = "red"
+        confirmPasswordInfo.style.color = "red"
+        confirmPassword.style.color = "red"
+      } else if (password.value === confirmPassword.value) {
+        confirmPasswordInfo.textContent = "Password matched successfully"
+        passwordInfo.style.color = "green"
+        password.style.borderColor = "green"
+        confirmPasswordInfo.style.color = "green"
+        confirmPassword.style.color = "green"
+      }
+    }
+  } else if (tetingPassword.test(confirmPassword.value) === false) {
+    confirmPasswordInfo.textContent = "Sorry password does not matched our requirement"
+  }
+});
+
+confirmPassword.addEventListener("focusin", () => {
+  if (confirmPasswordInfo.textContent.length >= 1) {
+    confirmPasswordInfo.textContent = "";
+  }
+});
+
+const form = document.querySelector("form");
+form.addEventListener("onsubmit", (e) => {
+  if (true) {
+    e.preventDefault();
+  }
+})
