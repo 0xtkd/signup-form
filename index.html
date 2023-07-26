@@ -34,18 +34,18 @@
       <p>You know you want to.</p>
     </section>
     <section class="form-section">
-      <form action="/" method="get" onsubmit="return validateForm();">
+      <form action="/" method="post">
         <fieldset class="fieldset-section">
           <h3 class="title">Let's do this!</h3>
           <div class="first_name form">
-            <label for="first_name">First Name*
+            <label for="first_name">*First Name
             </label>
             <input type="text" name="first_name" id="first_name" minlength="2" maxlength="15"
               placeholder="Example : John" required />
             <span></span>
           </div>
           <div class="last_name form">
-            <label for="last_name">Last Name*
+            <label for="last_name">*Last Name
             </label>
             <input type="text" name="last_name" id="last_name" minlength="2" maxlength="15" placeholder="Example : Does"
               required />
@@ -54,32 +54,27 @@
           <div class="email form">
             <label for="email">*Email
             </label>
-            <input type="email" name="email" id="email" patern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-              placeholder="Exeample : exemple@please.org" required />
+            <input type="email" name="email" id="email" placeholder="Exeample : exemple@please.org" required/>
             <span></span>
           </div>
           <div class="phone_number form">
             <label for="phone_number">*Phone Number
             </label>
-            <input type="text" name="phone_number" id="phone_number"
-              pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
-              placeholder="Example : +44 4748 383 39" required />
+            <input type="text" name="phone_number" id="phone_number" placeholder="Example : +44 4748 383 39" required/>
             <span></span>
           </div>
           <div class="password form">
             <label for="password">*Password
             </label>
             <input type="password" name="password" id="password"
-              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" minlength="8"
-              maxlength="20" placeholder="Enter your password"
+              minlength="8" maxlength="20" placeholder="Enter your password"
               title="Password must have : capital letter, special symbol, number, and letters" required />
             <span></span>
           </div>
           <div class="confirm_password form">
             <label for="confirm_password" d>*Confirm Password </label>
             <input type="password" name="confirm_password" id="confirm_password"
-              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" minlength="8"
-              maxlength="20" placeholder="Confirm your Password"
+              minlength="8" maxlength="20" placeholder="Confirm your Password"
               title="Password must have : capital letter, special symbol, number, and letters" required />
             <span></span>
           </div>
