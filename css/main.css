@@ -1,4 +1,16 @@
-@media only screen and (min-width: 818px) {
+input:invalid:required:focus {
+  border: 1px solid #E3242B;
+}
+
+input:focus:valid {
+  border-color: #0B6623;
+}
+
+input:valid:required:focus {
+  border: 1px solid #0B6623;
+}
+
+@media only screen and (min-width: 1001px) {
   /* custom font face */
 
   @font-face {
@@ -17,26 +29,14 @@
   }
 
   body {
+    border-style: solid;
     min-width: 100vh;
     overflow-x: hidden;
-    background-color: #2f2e41;
     color: black;
     display: grid;
     grid-template-columns: 1.2fr 3fr;
     font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
-  }
-
-  input:focus {
-    border-color:#2e8bc0;
-  }
-
-  input:invalid:required:focus {
-    border-color: #E3242B;
-  }
-
-  input:valid:required:focus {
-    border-color: #0B6623;
   }
 
   /* left main section */
@@ -84,7 +84,7 @@
     text-align: center;
   }
 
-  .copyright > a {
+  .copyright>a {
     color: #ffffff;
   }
 
@@ -157,9 +157,12 @@
     flex-direction: column;
     gap: 2.5em;
     padding: 0 0 0 2rem;
+    border: none;
+    box-shadow: 8px 0 7px rgba(0, 0, 0, .4888);
   }
 
   .submit-section> :first-child {
+    cursor: pointer;
     margin-top: 3rem;
     width: 24ch;
     height: 5ch;
@@ -183,7 +186,7 @@
   }
 }
 
-@media only screen and (max-width: 817px) {
+@media only screen and (max-width: 1000px) {
   body {
     background-color: #2f2e41;
     overflow-x: hidden;
@@ -194,22 +197,12 @@
     border: none;
   }
 
+  .copyright {
+    display: none;
+  }
+
   label {
     color: #418a53;
-  }
-
-  input:focus {
-    border-color: #000;
-  }
-
-  input:invalid:required:focus {
-    background-color: red;
-    border-color: red;
-  }
-
-  input:valid:required:focus {
-    background-color: #596d48;
-    border-color: #596d48;
   }
 
   .submit-section a {
@@ -227,7 +220,6 @@
     width: 100vw;
     height: 70vh;
     background: url("../images/mobile.svg");
-    /* background-size: contain; */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -323,6 +315,7 @@
   }
 
   .submit-section>button[type="submit"] {
+    cursor: pointer;
     font-weight: bold;
     font-size: 1.1rem;
     border-radius: 6px;
