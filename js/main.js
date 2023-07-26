@@ -201,6 +201,7 @@ confirmPassword.addEventListener("focusin", () => {
   }
 });
 
+//preventing form being submited whith invalid input
 const sendForm = document.querySelector("form");
 sendForm.addEventListener("click", (e) => {
   if (preventPass === true || preventConfPass === true) {
